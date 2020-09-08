@@ -4,4 +4,6 @@ name: Dev - Scrape Yahoo Price
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or p
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  push:
+   
