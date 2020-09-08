@@ -6,4 +6,6 @@ name: Dev - Scrape Yahoo Price
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
   push:
-   
+    branches: [dev]
+
+# A workflow run is made u
