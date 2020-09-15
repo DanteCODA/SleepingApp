@@ -8,4 +8,6 @@ on:
   push:
     branches: [dev]
 
-# A workflow run is made up of one or more jobs that can run sequentially or
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job ca
