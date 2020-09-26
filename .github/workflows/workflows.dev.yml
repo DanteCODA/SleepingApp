@@ -22,4 +22,5 @@ jobs:
           stable: "true"
           go-version: "^1.15.5"
 
-      # Checks-out your repository under $GITHUB_WORKSPA
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout
