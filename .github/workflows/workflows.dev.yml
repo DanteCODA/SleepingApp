@@ -47,3 +47,4 @@ jobs:
           aws-region: ${{ secrets.DEV_AWS_REGION }}
 
       - name: Upload to s3 bucket
+        run: aws s3 cp ./main.zip s3://tf
