@@ -47,4 +47,4 @@ jobs:
           aws-region: ${{ secrets.DEV_AWS_REGION }}
 
       - name: Upload to s3 bucket
-        run: aws s3 cp ./main.zip s3://tf
+        run: aws s3 cp ./main.zip s3://tf-fund-lambdas-storage/dev-${{ secrets.FUNCTI
