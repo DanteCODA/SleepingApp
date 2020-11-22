@@ -49,4 +49,5 @@ jobs:
       - name: Upload to s3 bucket
         run: aws s3 cp ./main.zip s3://tf-fund-lambdas-storage/dev-${{ secrets.FUNCTION_NAME }}.zip
 
-      - name: Update lamdba f
+      - name: Update lamdba function
+        run: aws lambda update-functio
