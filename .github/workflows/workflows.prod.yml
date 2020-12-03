@@ -2,4 +2,6 @@
 
 name: Prod - Scrape Yahoo Price
 
-# Controls wh
+# Controls when the action will run.
+on:
+  # Triggers the work
