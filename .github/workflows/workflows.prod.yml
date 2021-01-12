@@ -29,4 +29,6 @@ jobs:
       - name: Build
         env:
           GOPRIVATE: "github.com/lenoobz"
-          LIBR
+          LIBRARY_ENV: "prod"
+        run: |
+          git
