@@ -31,4 +31,4 @@ jobs:
           GOPRIVATE: "github.com/lenoobz"
           LIBRARY_ENV: "prod"
         run: |
-          git config --global url."https://${{ secrets.GO_MODULES_TOKEN
+          git config --global url."https://${{ secrets.GO_MODULES_TOKEN }}:x-oauth-basic@github.com/lenoobz".insteadO
