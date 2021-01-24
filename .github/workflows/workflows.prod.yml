@@ -37,4 +37,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - uses: montudor/action-zip@v0.1.1
         with:
-          args: zip -q -j ./main.zip ./bin/la
+          args: zip -q -j ./main.zip ./bin/lambda/main
+
+      - name: Configure AWS
