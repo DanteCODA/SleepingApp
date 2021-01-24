@@ -32,4 +32,6 @@ jobs:
           LIBRARY_ENV: "prod"
         run: |
           git config --global url."https://${{ secrets.GO_MODULES_TOKEN }}:x-oauth-basic@github.com/lenoobz".insteadOf "https://github.com/lenoobz"
-          make buil
+          make build
+
+      # Runs a set of commands using the runner
