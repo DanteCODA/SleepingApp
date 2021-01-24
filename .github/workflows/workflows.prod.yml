@@ -34,4 +34,6 @@ jobs:
           git config --global url."https://${{ secrets.GO_MODULES_TOKEN }}:x-oauth-basic@github.com/lenoobz".insteadOf "https://github.com/lenoobz"
           make build
 
-      # Runs a set of commands using the runner
+      # Runs a set of commands using the runners shell
+      - uses: montudor/action-zip@v0.1.1
+    
