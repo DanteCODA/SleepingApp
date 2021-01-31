@@ -39,4 +39,5 @@ jobs:
         with:
           args: zip -q -j ./main.zip ./bin/lambda/main
 
-      - name: Configure AWS
+      - name: Configure AWS credentials
+        uses: aws-actions/configur
