@@ -2,4 +2,6 @@
 
 name: Staging - Scrape Yahoo Price
 
-# Controls when the action
+# Controls when the action will run.
+on:
+  # Triggers the work
