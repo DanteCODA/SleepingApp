@@ -4,4 +4,6 @@ name: Staging - Scrape Yahoo Price
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but onl
+  # Triggers the workflow on push or pull request events but only for the dev branch
+  push:
+    branches: [staging]
