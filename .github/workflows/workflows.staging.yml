@@ -15,4 +15,4 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps
+    # Steps represent a sequence of tasks that will b
