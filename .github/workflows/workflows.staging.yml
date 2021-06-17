@@ -29,4 +29,6 @@ jobs:
       - name: Build
         env:
           GOPRIVATE: "github.com/lenoobz"
-      
+          LIBRARY_ENV: "staging"
+        run: |
+   
