@@ -43,4 +43,4 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
-          a
+          aws-secret-access-key: ${{ secrets.STAGING_AWS_SECRE
