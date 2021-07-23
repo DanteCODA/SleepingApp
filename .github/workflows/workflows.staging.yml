@@ -46,4 +46,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.STAGING_AWS_REGION }}
 
-      - name: Upload to s3 buck
+      - name: Upload to s3 bucket
+        run: aws s3 cp ./main.zip s3://tf-fund-l
