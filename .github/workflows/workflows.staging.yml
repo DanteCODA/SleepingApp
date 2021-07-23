@@ -47,4 +47,4 @@ jobs:
           aws-region: ${{ secrets.STAGING_AWS_REGION }}
 
       - name: Upload to s3 bucket
-        run: aws s3 cp ./main.zip s3://tf-fund-l
+        run: aws s3 cp ./main.zip s3://tf-fund-lambdas-storage/staging-${{ secrets.FUNCTION_NAME }}.z
