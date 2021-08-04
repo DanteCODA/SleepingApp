@@ -2,4 +2,5 @@
 all: build
 FORCE: ;
 
-SHELL  := env 
+SHELL  := env LIBRARY_ENV=$(LIBRARY_ENV) $(SHELL)
+LIBRARY_ENV ?= 
