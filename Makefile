@@ -15,4 +15,7 @@ clean:
 dependencies:
 	go mod download
 
-build
+build: dependencies build-api
+
+build-api: 
+	GOARCH=amd64 GOOS=l
