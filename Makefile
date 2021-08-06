@@ -10,3 +10,9 @@ BIN_DIR = $(PWD)/bin
 .PHONY: build
 
 clean:
+	rm -rf bin/*
+
+dependencies:
+	go mod download
+
+build
