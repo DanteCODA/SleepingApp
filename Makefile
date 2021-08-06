@@ -18,4 +18,4 @@ dependencies:
 build: dependencies build-api
 
 build-api: 
-	GOARCH=amd64 GOOS=l
+	GOARCH=amd64 GOOS=linux go build -tags $(LIBRARY_ENV) -
