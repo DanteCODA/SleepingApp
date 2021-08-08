@@ -21,4 +21,9 @@ build-api:
 	GOARCH=amd64 GOOS=linux go build -tags $(LIBRARY_ENV) -o ./bin/lambda/main api/lambda/main.go
 
 build-cmd:
-	go build -tags $(LIBRARY_ENV) -o ./bin/cmd
+	go build -tags $(LIBRARY_ENV) -o ./bin/cmd/main cmd/main.go
+
+ci: dependencies test	
+
+test:
+	
