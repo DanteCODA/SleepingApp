@@ -26,4 +26,6 @@ build-cmd:
 ci: dependencies test	
 
 test:
-	
+	go test -tags testing ./...
+
+fmt: ## gofmt and g
