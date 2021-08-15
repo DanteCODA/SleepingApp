@@ -28,4 +28,5 @@ ci: dependencies test
 test:
 	go test -tags testing ./...
 
-fmt: ## gofmt and g
+fmt: ## gofmt and goimports all go files
+	find . -name '*.go' -not -w
