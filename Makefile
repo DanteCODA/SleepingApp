@@ -31,4 +31,6 @@ test:
 fmt: ## gofmt and goimports all go files
 	find . -name '*.go' -not -wholename './vendor/*' | while read -r file; do gofmt -w -s "$$file"; goimports -w "$$file"; done
 
-# NOTE: Placeholder for buidling linux-bin
+# NOTE: Placeholder for buidling linux-binaries
+# linux-binaries:
+# 	CGO_ENA
