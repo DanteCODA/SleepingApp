@@ -33,4 +33,5 @@ fmt: ## gofmt and goimports all go files
 
 # NOTE: Placeholder for buidling linux-binaries
 # linux-binaries:
-# 	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -tags "$(LIBRARY_ENV) netgo" -installsuffix 
+# 	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -tags "$(LIBRARY_ENV) netgo" -installsuffix netgo -o $(BIN_DIR)/api api/lambda/main.go
+# 	CGO_ENABLED
