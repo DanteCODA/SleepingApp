@@ -38,4 +38,5 @@ fmt: ## gofmt and goimports all go files
 
 # NOTE: Placeholder for buidling mock
 # build-mocks:
-# 
+# 	@go get github.com/golang/mock/gomock
+# 	@go ins
