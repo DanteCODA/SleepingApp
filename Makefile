@@ -40,4 +40,4 @@ fmt: ## gofmt and goimports all go files
 # build-mocks:
 # 	@go get github.com/golang/mock/gomock
 # 	@go install github.com/golang/mock/mockgen
-# 	@~/go/b
+# 	@~/go/bin/mockgen -source=usecase/book/interface.go -d
