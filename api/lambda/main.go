@@ -10,4 +10,4 @@ import (
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/consts"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/infrastructure/repositories/repos"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/infrastructure/scraper"
-	"github.com/leno
+	"github.com/lenoobz/aws-yahoo-asset-price-scraper/usecase/asset
