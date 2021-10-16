@@ -8,4 +8,4 @@ import (
 	logger "github.com/lenoobz/aws-lambda-logger"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/config"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/consts"
-	"github.com/lenoobz/aws-yahoo-asset-price-
+	"github.com/lenoobz/aws-yahoo-asset-price-scraper/infrastructure/repositories/rep
