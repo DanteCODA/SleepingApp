@@ -15,4 +15,8 @@ import (
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/usecase/price"
 )
 
-func main()
+func main() {
+	lambda.Start(lambdaHandler)
+}
+
+func lamb
