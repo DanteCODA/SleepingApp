@@ -20,4 +20,6 @@ func main() {
 }
 
 func lambdaHandler(ctx context.Context) {
-	lo
+	log.Println("lambda handler is called")
+
+	appConf 
