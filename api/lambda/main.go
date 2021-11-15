@@ -19,4 +19,5 @@ func main() {
 	lambda.Start(lambdaHandler)
 }
 
-func lamb
+func lambdaHandler(ctx context.Context) {
+	lo
