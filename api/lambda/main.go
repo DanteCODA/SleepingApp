@@ -26,4 +26,5 @@ func lambdaHandler(ctx context.Context) {
 
 	// create new logger
 	zap, err := logger.NewZapLogger()
-	i
+	if err != nil {
+		log.Fatal("create app logge
