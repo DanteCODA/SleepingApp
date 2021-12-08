@@ -22,4 +22,6 @@ func main() {
 func lambdaHandler(ctx context.Context) {
 	log.Println("lambda handler is called")
 
-	appConf 
+	appConf := config.AppConf
+
+	// create new logg
