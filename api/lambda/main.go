@@ -24,4 +24,6 @@ func lambdaHandler(ctx context.Context) {
 
 	appConf := config.AppConf
 
-	// create new logg
+	// create new logger
+	zap, err := logger.NewZapLogger()
+	i
