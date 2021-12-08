@@ -38,4 +38,5 @@ func lambdaHandler(ctx context.Context) {
 	}
 	defer assetPriceRepo.Close()
 
-	//
+	// create new repository
+	assetRepo, err :
