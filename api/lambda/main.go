@@ -32,4 +32,5 @@ func lambdaHandler(ctx context.Context) {
 	defer zap.Close()
 
 	// create new repository
-	assetPriceRepo, err := rep
+	assetPriceRepo, err := repos.NewAssetPriceMongo(nil, zap, &appConf.Mongo)
+	i
