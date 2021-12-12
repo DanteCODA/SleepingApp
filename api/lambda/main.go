@@ -40,4 +40,5 @@ func lambdaHandler(ctx context.Context) {
 
 	// create new repository
 	assetRepo, err := repos.NewAssetMongo(nil, zap, &appConf.Mongo)
-	if err
+	if err != nil {
+		log.Fatal("create asset mongo 
