@@ -48,4 +48,6 @@ func lambdaHandler(ctx context.Context) {
 	// create new repository
 	checkpointRepo, err := repos.NewCheckpointMongo(nil, zap, &appConf.Mongo)
 	if err != nil {
-		log.Fatal("cre
+		log.Fatal("create checkpoint mongo failed")
+	}
+	defer checkp
