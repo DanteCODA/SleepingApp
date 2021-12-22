@@ -45,4 +45,5 @@ func lambdaHandler(ctx context.Context) {
 	}
 	defer assetRepo.Close()
 
-	// create ne
+	// create new repository
+	checkpointRepo, err :=
