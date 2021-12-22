@@ -53,4 +53,4 @@ func lambdaHandler(ctx context.Context) {
 	defer checkpointRepo.Close()
 
 	// create new services
-	checkpoin
+	checkpointService := checkpoint.NewService(checkpoint
