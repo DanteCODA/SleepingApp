@@ -50,4 +50,7 @@ func lambdaHandler(ctx context.Context) {
 	if err != nil {
 		log.Fatal("create checkpoint mongo failed")
 	}
-	defer checkp
+	defer checkpointRepo.Close()
+
+	// create new services
+	checkpoin
