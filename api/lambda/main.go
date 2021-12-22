@@ -46,4 +46,4 @@ func lambdaHandler(ctx context.Context) {
 	defer assetRepo.Close()
 
 	// create new repository
-	checkpointRepo, err :=
+	checkpointRepo, err := repos.NewCheckpointMongo(nil, zap, &appConf.Mong
