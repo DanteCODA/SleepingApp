@@ -59,4 +59,6 @@ func lambdaHandler(ctx context.Context) {
 
 	// create new scraper jobs
 	job := scraper.NewAssetPriceScraper(assetService, priceService, zap)
-	job.ScrapeAssetPricesFromChec
+	job.ScrapeAssetPricesFromCheckpoint(consts.PAGE_SIZE)
+	defer job.Close()
+}
