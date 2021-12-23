@@ -54,4 +54,5 @@ func lambdaHandler(ctx context.Context) {
 
 	// create new services
 	checkpointService := checkpoint.NewService(checkpointRepo, zap)
-	assetService := assets.NewSe
+	assetService := assets.NewService(assetRepo, *checkpointService, zap)
+	pric
