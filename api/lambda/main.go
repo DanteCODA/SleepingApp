@@ -58,4 +58,4 @@ func lambdaHandler(ctx context.Context) {
 	priceService := price.NewService(assetPriceRepo, zap)
 
 	// create new scraper jobs
-	job := 
+	job := scraper.NewAssetPriceScraper(assetService, priceS
