@@ -1,3 +1,5 @@
 package config
 
-// MongoConfig st
+// MongoConfig struct
+type MongoConfig struct {
+	Timeout
