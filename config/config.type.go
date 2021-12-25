@@ -6,4 +6,6 @@ type MongoConfig struct {
 	MinPoolSize   uint64
 	MaxPoolSize   uint64
 	MaxIdleTimeMS uint64
-	Schem
+	SchemaVersion string
+	Username      string
+	Password 
