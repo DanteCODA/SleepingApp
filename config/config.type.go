@@ -8,4 +8,6 @@ type MongoConfig struct {
 	MaxIdleTimeMS uint64
 	SchemaVersion string
 	Username      string
-	Password 
+	Password      string
+	Host          string
+	Dbname 
