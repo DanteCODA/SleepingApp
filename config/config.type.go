@@ -10,4 +10,8 @@ type MongoConfig struct {
 	Username      string
 	Password      string
 	Host          string
-	Dbname 
+	Dbname        string
+	Colnames      map[string]string
+}
+
+//
