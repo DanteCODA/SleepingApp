@@ -4,4 +4,6 @@ package config
 type MongoConfig struct {
 	TimeoutMS     uint64
 	MinPoolSize   uint64
-	MaxPoolSize  
+	MaxPoolSize   uint64
+	MaxIdleTimeMS uint64
+	Schem
