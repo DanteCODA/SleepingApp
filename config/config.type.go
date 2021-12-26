@@ -16,4 +16,5 @@ type MongoConfig struct {
 
 // AppConfig struct
 type AppConfig struct {
-	
+	Mongo MongoConfig
+}
