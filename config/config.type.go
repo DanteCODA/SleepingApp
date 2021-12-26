@@ -14,4 +14,6 @@ type MongoConfig struct {
 	Colnames      map[string]string
 }
 
-//
+// AppConfig struct
+type AppConfig struct {
+	
