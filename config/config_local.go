@@ -2,4 +2,6 @@
 
 package config
 
-// AppConf con
+// AppConf constants
+var AppConf = AppConfig{
+	Mongo: Mongo
