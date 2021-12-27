@@ -9,4 +9,4 @@ var AppConf = AppConfig{
 		MinPoolSize:   5,
 		MaxPoolSize:   10,
 		MaxIdleTimeMS: 360000,
-		H
+		Host:          "lenoobdev.l8ckp.mongodb.net",
