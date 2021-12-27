@@ -4,4 +4,7 @@ package config
 
 // AppConf constants
 var AppConf = AppConfig{
-	Mongo: Mongo
+	Mongo: MongoConfig{
+		TimeoutMS:     360000,
+		MinPoolSize:   5,
+	
