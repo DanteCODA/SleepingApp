@@ -11,4 +11,5 @@ var AppConf = AppConfig{
 		MaxIdleTimeMS: 360000,
 		Host:          "lenoobdev.l8ckp.mongodb.net",
 		Username:      "lenoob_dev",
-		Pass
+		Password:      "lenoob_dev",
+		Dbname:       
