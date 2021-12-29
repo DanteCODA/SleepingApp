@@ -10,3 +10,5 @@ var AppConf = AppConfig{
 		MaxPoolSize:   10,
 		MaxIdleTimeMS: 360000,
 		Host:          "lenoobdev.l8ckp.mongodb.net",
+		Username:      "lenoob_dev",
+		Pass
