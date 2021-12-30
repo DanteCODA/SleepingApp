@@ -2,4 +2,6 @@
 
 package config
 
-impo
+import "os"
+
+var host = os.Getenv("MONGO_DB_HO
