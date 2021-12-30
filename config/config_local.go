@@ -16,4 +16,5 @@ var AppConf = AppConfig{
 		SchemaVersion: "1",
 		Colnames: map[string]string{
 			"assets":            "assets",
-			
+			"asset_prices":      "asset_prices",
+	
