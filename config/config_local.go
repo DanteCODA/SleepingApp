@@ -18,3 +18,6 @@ var AppConf = AppConfig{
 			"assets":            "assets",
 			"asset_prices":      "asset_prices",
 			"scrape_checkpoint": "scrape_checkpoint",
+		},
+	},
+}
