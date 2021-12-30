@@ -12,4 +12,6 @@ var AppConf = AppConfig{
 		Host:          "lenoobdev.l8ckp.mongodb.net",
 		Username:      "lenoob_dev",
 		Password:      "lenoob_dev",
-		Dbname:       
+		Dbname:        "povi",
+		SchemaVersion: "1",
+		Colnames: map[st
