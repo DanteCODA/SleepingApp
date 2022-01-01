@@ -9,4 +9,6 @@ var username = os.Getenv("MONGO_DB_USERNAME")
 var password = os.Getenv("MONGO_DB_PASSWORD")
 
 // AppConf constants
-var AppConf =
+var AppConf = AppConfig{
+	Mongo: MongoConfig{
+		TimeoutMS:     3
