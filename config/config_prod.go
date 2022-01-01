@@ -11,4 +11,6 @@ var password = os.Getenv("MONGO_DB_PASSWORD")
 // AppConf constants
 var AppConf = AppConfig{
 	Mongo: MongoConfig{
-		TimeoutMS:     3
+		TimeoutMS:     360000,
+		MinPoolSize:   5,
+		MaxPoolSize:   10
