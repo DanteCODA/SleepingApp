@@ -23,4 +23,7 @@ var AppConf = AppConfig{
 		Colnames: map[string]string{
 			"assets":            "assets",
 			"asset_prices":      "asset_prices",
-			"scrape_checkpoint": "scrape_chec
+			"scrape_checkpoint": "scrape_checkpoint",
+		},
+	},
+}
