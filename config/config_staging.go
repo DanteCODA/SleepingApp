@@ -14,4 +14,6 @@ var AppConf = AppConfig{
 		TimeoutMS:     360000,
 		MinPoolSize:   5,
 		MaxPoolSize:   10,
-		MaxIdleTimeM
+		MaxIdleTimeMS: 360000,
+		Host:          host,
+		
