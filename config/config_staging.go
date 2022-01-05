@@ -16,4 +16,5 @@ var AppConf = AppConfig{
 		MaxPoolSize:   10,
 		MaxIdleTimeMS: 360000,
 		Host:          host,
-		
+		Username:      username,
+		Password:     
