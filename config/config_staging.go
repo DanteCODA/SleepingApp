@@ -19,4 +19,5 @@ var AppConf = AppConfig{
 		Username:      username,
 		Password:      password,
 		Dbname:        "povi",
-		S
+		SchemaVersion: "1",
+		Colnames: map[string]
