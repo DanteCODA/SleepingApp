@@ -17,4 +17,6 @@ var AppConf = AppConfig{
 		MaxIdleTimeMS: 360000,
 		Host:          host,
 		Username:      username,
-		Password:     
+		Password:      password,
+		Dbname:        "povi",
+		S
