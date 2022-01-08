@@ -21,4 +21,6 @@ var AppConf = AppConfig{
 		Dbname:        "povi",
 		SchemaVersion: "1",
 		Colnames: map[string]string{
-			"assets":            "ass
+			"assets":            "assets",
+			"asset_prices":      "asset_prices",
+	
