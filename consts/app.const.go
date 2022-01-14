@@ -4,4 +4,7 @@ package consts
 const (
 	ASSETS_COLLECTION            = "assets"
 	ASSET_PRICES_COLLECTION      = "asset_prices"
-	SCRAPE_CHECKPOINT_COLLECTION 
+	SCRAPE_CHECKPOINT_COLLECTION = "scrape_checkpoint"
+)
+
+const PAGE_SIZE = 100
