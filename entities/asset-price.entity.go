@@ -2,4 +2,6 @@ package entities
 
 // AssetPrice struct
 type AssetPrice struct {
-	Ticker   string  `json:"ticker,omitempty
+	Ticker   string  `json:"ticker,omitempty"`
+	Price    float64 `json:"price,omitempty"`
+	Curren
