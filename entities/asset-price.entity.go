@@ -1,4 +1,5 @@
 package entities
 
 // AssetPrice struct
-type AssetPrice stru
+type AssetPrice struct {
+	Ticker   string  `json:"ticker,omitempty
