@@ -4,4 +4,5 @@ package entities
 type AssetPrice struct {
 	Ticker   string  `json:"ticker,omitempty"`
 	Price    float64 `json:"price,omitempty"`
-	Curren
+	Currency string  `json:"currency,omitempty"`
+}
