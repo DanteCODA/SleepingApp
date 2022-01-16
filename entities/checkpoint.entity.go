@@ -2,4 +2,4 @@ package entities
 
 // Checkpoint struct
 type Checkpoint struct {
-	Pa
+	PageSize  int64 `json:"size,omitempty
