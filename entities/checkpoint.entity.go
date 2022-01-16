@@ -1,3 +1,5 @@
 package entities
 
-// C
+// Checkpoint struct
+type Checkpoint struct {
+	Pa
