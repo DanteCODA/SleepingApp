@@ -91,4 +91,5 @@ github.com/konsorten/go-windows-terminal-sequences v1.0.2/go.mod h1:T0+1ngSBFLxv
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
-github.com/lenoobz/aws-lambda-corid v0.0.0-20210726202238-53751e0a
+github.com/lenoobz/aws-lambda-corid v0.0.0-20210726202238-53751e0ade36 h1:6ymxGZSW++arPH36byCDY5d2BwHTw/dtghdaWr8tweQ=
+gi
