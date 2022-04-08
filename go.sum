@@ -95,4 +95,5 @@ github.com/lenoobz/aws-lambda-corid v0.0.0-20210726202238-53751e0ade36 h1:6ymxGZ
 github.com/lenoobz/aws-lambda-corid v0.0.0-20210726202238-53751e0ade36/go.mod h1:0/s7twsPc+ryImaoZGcYFAa+knsiJaLldCRf937Docc=
 github.com/lenoobz/aws-lambda-logger v0.0.0-20210726205244-4eae893f1aa9 h1:3tZ+097EN0k0R4lo6Qrvw7UhXgAyKkvhwAXmAc5bgFg=
 github.com/lenoobz/aws-lambda-logger v0.0.0-20210726205244-4eae893f1aa9/go.mod h1:nvDBqFQUsE3wZh4VaeD+h76AokU2WkBBoJ+/zdoDx8M=
-github.com/markbates/oncer v0.0.0-20181203154359-bf2de49a0be2/go.mod h1:Ld9puT
+github.com/markbates/oncer v0.0.0-20181203154359-bf2de49a0be2/go.mod h1:Ld9puTsIW75CHf65OeIOkyKbteujpZVXDpWK6YGZbxE=
+github.com/ma
