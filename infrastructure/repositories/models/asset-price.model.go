@@ -5,4 +5,5 @@ import (
 	"time"
 
 	logger "github.com/lenoobz/aws-lambda-logger"
-	"github.com/lenoobz/
+	"github.com/lenoobz/aws-yahoo-asset-price-scraper/entities"
+	"go.mongodb.or
