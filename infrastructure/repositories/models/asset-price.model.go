@@ -6,4 +6,7 @@ import (
 
 	logger "github.com/lenoobz/aws-lambda-logger"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/entities"
-	"go.mongodb.or
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
+
+// AssetP
