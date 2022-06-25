@@ -11,4 +11,5 @@ import (
 
 // AssetPriceModel struct
 type AssetPriceModel struct {
-	ID         
+	ID         *primitive.ObjectID `bson:"_id,omitempty"`
+	
