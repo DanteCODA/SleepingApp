@@ -9,4 +9,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// AssetP
+// AssetPriceModel struct
+type AssetPriceModel struct {
+	ID         
