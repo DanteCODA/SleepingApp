@@ -14,4 +14,4 @@ type AssetPriceModel struct {
 	ID         *primitive.ObjectID `bson:"_id,omitempty"`
 	CreatedAt  int64               `bson:"createdAt,omitempty"`
 	ModifiedAt int64               `bson:"modifiedAt,omitempty"`
-	Enab
+	Enabled    bool                `bson:"enabled"`
