@@ -16,4 +16,5 @@ type AssetPriceModel struct {
 	ModifiedAt int64               `bson:"modifiedAt,omitempty"`
 	Enabled    bool                `bson:"enabled"`
 	Deleted    bool                `bson:"deleted"`
-	Schema     string              `bson:"schema,omitem
+	Schema     string              `bson:"schema,omitempty"`
+	Source     string              `bson:"s
