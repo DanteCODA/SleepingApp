@@ -19,4 +19,4 @@ type AssetPriceModel struct {
 	Schema     string              `bson:"schema,omitempty"`
 	Source     string              `bson:"source,omitempty"`
 	Ticker     string              `bson:"ticker,omitempty"`
-	C
+	Currency   string              `bson:"cur
