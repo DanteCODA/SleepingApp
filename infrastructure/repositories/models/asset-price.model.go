@@ -18,4 +18,5 @@ type AssetPriceModel struct {
 	Deleted    bool                `bson:"deleted"`
 	Schema     string              `bson:"schema,omitempty"`
 	Source     string              `bson:"source,omitempty"`
-	Ticker     s
+	Ticker     string              `bson:"ticker,omitempty"`
+	C
