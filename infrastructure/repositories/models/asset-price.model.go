@@ -17,4 +17,5 @@ type AssetPriceModel struct {
 	Enabled    bool                `bson:"enabled"`
 	Deleted    bool                `bson:"deleted"`
 	Schema     string              `bson:"schema,omitempty"`
-	Source     string              `bson:"s
+	Source     string              `bson:"source,omitempty"`
+	Ticker     s
