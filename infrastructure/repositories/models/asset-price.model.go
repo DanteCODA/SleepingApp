@@ -20,4 +20,7 @@ type AssetPriceModel struct {
 	Source     string              `bson:"source,omitempty"`
 	Ticker     string              `bson:"ticker,omitempty"`
 	Currency   string              `bson:"currency,omitempty"`
-	Price      float64  
+	Price      float64             `bson:"price,omitempty"`
+}
+
+// Ne
