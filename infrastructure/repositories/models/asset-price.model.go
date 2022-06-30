@@ -23,4 +23,5 @@ type AssetPriceModel struct {
 	Price      float64             `bson:"price,omitempty"`
 }
 
-// Ne
+// NewAssetPriceModel create asset price model
+fun
