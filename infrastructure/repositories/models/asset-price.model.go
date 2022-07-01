@@ -24,4 +24,4 @@ type AssetPriceModel struct {
 }
 
 // NewAssetPriceModel create asset price model
-fun
+func NewAssetPriceModel(ctx context.Context, log logger
