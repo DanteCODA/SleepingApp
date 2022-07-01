@@ -24,4 +24,4 @@ type AssetPriceModel struct {
 }
 
 // NewAssetPriceModel create asset price model
-func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *entities.AssetP
+func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *entities.AssetPrice, schemaVersion string) (*AssetPriceModel, err
