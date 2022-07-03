@@ -65,3 +65,59 @@ func NewAssetPriceMongo(db *mongo.Database, log logger.ContextLog, conf *config.
 	if err != nil {
 		return nil, err
 	}
+
+	return &AssetPriceMongo{
+		db:     client.Database(conf.Dbname),
+		client: client,
+		log:    log,
+		conf:   conf,
+	}, nil
+}
+
+// Close disconnect from database
+func (r *AssetPriceMongo) Close() {
+	ctx := context.Background()
+	r.log.Info(ctx, "close mongo client")
+
+	if r.client == nil {
+		return
+	}
+
+	if err := r.client.Disconnect(ctx); err != nil {
+		r.log.Error(ctx, "disconnect mongo failed", "error", err)
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Implement interface
+///////////////////////////////////////////////////////////////////////////////
+
+// InsertAssetPrice insert asset price
+func (r *AssetPriceMongo) InsertAssetPrice(ctx context.Context, assetPrice *entities.AssetPrice) error {
+	// create new context for the query
+	ctx, cancel := createContext(ctx, r.conf.TimeoutMS)
+	defer cancel()
+
+	priceModel, err := models.NewAssetPriceModel(ctx, r.log, assetPrice, r.conf.SchemaVersion)
+	if err != nil {
+		r.log.Error(ctx, "create model failed", "error", err)
+		return err
+	}
+
+	// what collection we are going to use
+	colname, ok := r.conf.Colnames[consts.ASSET_PRICES_COLLECTION]
+	if !ok {
+		r.log.Error(ctx, "cannot find collection name")
+		return fmt.Errorf("cannot find collection name")
+	}
+	col := r.db.Collection(colname)
+
+	filter := bson.D{{
+		Key:   "ticker",
+		Value: priceModel.Ticker,
+	}}
+
+	update := bson.D{
+		{
+			Key:   "$set",
+			Value: priceModel,
