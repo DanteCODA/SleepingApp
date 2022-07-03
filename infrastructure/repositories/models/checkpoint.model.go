@@ -30,3 +30,10 @@ func NewCheckPointModel(ctx context.Context, log logger.ContextLog, pageSize int
 	return &CheckPointModel{
 		ModifiedAt: time.Now().UTC().Unix(),
 		Enabled:    true,
+		Deleted:    false,
+		Schema:     schemaVersion,
+		PriceCheckPoint: &PriceCheckPointModel{
+			PageSize: pageSize,
+		},
+	}, nil
+}
