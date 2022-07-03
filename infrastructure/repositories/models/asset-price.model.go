@@ -27,4 +27,6 @@ type AssetPriceModel struct {
 func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *entities.AssetPrice, schemaVersion string) (*AssetPriceModel, error) {
 	return &AssetPriceModel{
 		ModifiedAt: time.Now().UTC().Unix(),
-		Enabled:    
+		Enabled:    true,
+		Deleted:    false,
+		Schema:  
