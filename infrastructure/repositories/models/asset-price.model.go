@@ -32,4 +32,6 @@ func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *
 		Schema:     schemaVersion,
 		Ticker:     assetPrice.Ticker,
 		Currency:   assetPrice.Currency,
-		Price:      assetPrice.Price
+		Price:      assetPrice.Price,
+	}, nil
+}
