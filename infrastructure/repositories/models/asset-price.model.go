@@ -29,4 +29,5 @@ func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *
 		ModifiedAt: time.Now().UTC().Unix(),
 		Enabled:    true,
 		Deleted:    false,
-		Schema:  
+		Schema:     schemaVersion,
+		Ticker:     assetPri
