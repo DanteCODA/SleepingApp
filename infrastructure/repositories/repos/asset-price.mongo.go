@@ -121,3 +121,23 @@ func (r *AssetPriceMongo) InsertAssetPrice(ctx context.Context, assetPrice *enti
 		{
 			Key:   "$set",
 			Value: priceModel,
+		},
+		{
+			Key: "$setOnInsert",
+			Value: bson.D{{
+				Key:   "createdAt",
+				Value: time.Now().UTC().Unix(),
+			}},
+		},
+	}
+
+	opts := options.Update().SetUpsert(true)
+
+	_, err = col.UpdateOne(ctx, filter, update, opts)
+	if err != nil {
+		r.log.Error(ctx, "update one failed", "error", err)
+		return err
+	}
+
+	return nil
+}
