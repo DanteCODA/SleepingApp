@@ -31,4 +31,5 @@ func NewAssetPriceModel(ctx context.Context, log logger.ContextLog, assetPrice *
 		Deleted:    false,
 		Schema:     schemaVersion,
 		Ticker:     assetPrice.Ticker,
-		Currency:   assetPrice.Cu
+		Currency:   assetPrice.Currency,
+		Price:      assetPrice.Price
