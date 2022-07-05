@@ -67,3 +67,55 @@ func NewAssetMongo(db *mongo.Database, log logger.ContextLog, conf *config.Mongo
 
 	return &AssetMongo{
 		db:     client.Database(conf.Dbname),
+		client: client,
+		log:    log,
+		conf:   conf,
+	}, nil
+}
+
+// Close disconnect from database
+func (r *AssetMongo) Close() {
+	ctx := context.Background()
+	r.log.Info(ctx, "close mongo client")
+
+	if r.client == nil {
+		return
+	}
+
+	if err := r.client.Disconnect(ctx); err != nil {
+		r.log.Error(ctx, "disconnect mongo failed", "error", err)
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Implement interface
+///////////////////////////////////////////////////////////////////////////////
+
+// CountAssets count number of assets available
+func (r *AssetMongo) CountAssets(ctx context.Context) (int64, error) {
+	// create new context for the query
+	ctx, cancel := createContext(ctx, r.conf.TimeoutMS)
+	defer cancel()
+
+	// what collection we are going to use
+	colname, ok := r.conf.Colnames[consts.ASSETS_COLLECTION]
+	if !ok {
+		r.log.Error(ctx, "cannot find collection name")
+		return 0, fmt.Errorf("cannot find collection name")
+	}
+	col := r.db.Collection(colname)
+
+	// filter
+	filter := bson.D{}
+
+	// find options
+	countOptions := options.Count()
+
+	return col.CountDocuments(ctx, filter, countOptions)
+}
+
+// FindAllAssets find all assets
+func (r *AssetMongo) FindAllAssets(ctx context.Context) ([]*entities.Asset, error) {
+	// create new context for the query
+	ctx, cancel := createContext(ctx, r.conf.TimeoutMS)
+	defer cancel()
