@@ -217,3 +217,17 @@ func (r *AssetMongo) FindAssetsFromCheckpoint(ctx context.Context, checkpoint *e
 		// decode cursor to activity model
 		var asset entities.Asset
 		if err = cur.Decode(&asset); err != nil {
+			r.log.Error(ctx, "decode failed", "error", err)
+			return nil, err
+		}
+
+		assets = append(assets, &asset)
+	}
+
+	if err := cur.Err(); err != nil {
+		r.log.Error(ctx, "iterate over cursor failed", "error", err)
+		return nil, err
+	}
+
+	return assets, nil
+}
