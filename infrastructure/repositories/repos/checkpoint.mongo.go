@@ -49,3 +49,57 @@ func NewCheckpointMongo(db *mongo.Database, log logger.ContextLog, conf *config.
 
 	// set max pool size
 	if conf.MaxPoolSize > 0 {
+		clientOptions.SetMaxPoolSize(conf.MaxPoolSize)
+	}
+
+	// set max idle time ms
+	if conf.MaxIdleTimeMS > 0 {
+		clientOptions.SetMaxConnIdleTime(time.Duration(conf.MaxIdleTimeMS) * time.Millisecond)
+	}
+
+	// construct a connection string from mongo config object
+	cxnString := fmt.Sprintf("mongodb+srv://%s:%s@%s", conf.Username, conf.Password, conf.Host)
+
+	// create mongo client by making new connection
+	client, err := mongo.Connect(ctx, clientOptions.ApplyURI(cxnString))
+	if err != nil {
+		return nil, err
+	}
+
+	return &CheckpointMongo{
+		db:     client.Database(conf.Dbname),
+		client: client,
+		log:    log,
+		conf:   conf,
+	}, nil
+}
+
+// Close disconnect from database
+func (r *CheckpointMongo) Close() {
+	ctx := context.Background()
+	r.log.Info(ctx, "close mongo client")
+
+	if r.client == nil {
+		return
+	}
+
+	if err := r.client.Disconnect(ctx); err != nil {
+		r.log.Error(ctx, "disconnect mongo failed", "error", err)
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Implement interface
+///////////////////////////////////////////////////////////////////////////////
+
+// UpdateCheckpoint updates a checkpoint given page size and number of asset
+func (r *CheckpointMongo) UpdateCheckpoint(ctx context.Context, pageSize int64, numAssets int64) (*entities.Checkpoint, error) {
+	// create new context for the query
+	ctx, cancel := createContext(ctx, r.conf.TimeoutMS)
+	defer cancel()
+
+	// what collection we are going to use
+	colname, ok := r.conf.Colnames[consts.SCRAPE_CHECKPOINT_COLLECTION]
+	if !ok {
+		r.log.Error(ctx, "cannot find collection name")
+		return nil, fmt.Errorf("cannot find collection name")
