@@ -147,3 +147,47 @@ func (r *CheckpointMongo) UpdateCheckpoint(ctx context.Context, pageSize int64, 
 		}
 		return r.updateCheckPoint(ctx, col, &checkpoint)
 	}
+
+	currNumAssets := checkpoint.PriceCheckPoint.PrevIndex*checkpoint.PriceCheckPoint.PageSize + checkpoint.PriceCheckPoint.PageSize
+	if currNumAssets >= numAssets {
+		checkpoint.PriceCheckPoint.PrevIndex = 0
+	} else {
+		checkpoint.PriceCheckPoint.PrevIndex = checkpoint.PriceCheckPoint.PrevIndex + 1
+	}
+
+	checkpoint.PriceCheckPoint.PageSize = pageSize
+
+	return r.updateCheckPoint(ctx, col, &checkpoint)
+}
+
+// updateCheckPoint update checkpoint
+func (r *CheckpointMongo) updateCheckPoint(ctx context.Context, col *mongo.Collection, checkpoint *models.CheckPointModel) (*entities.Checkpoint, error) {
+	// filter
+	filter := bson.D{}
+	if checkpoint.ID != nil {
+		filter = bson.D{{Key: "_id", Value: checkpoint.ID}}
+	} else {
+		checkpoint.CreatedAt = time.Now().UTC().Unix()
+	}
+
+	// update
+	update := bson.D{
+		{
+			Key:   "$set",
+			Value: checkpoint,
+		},
+	}
+
+	opts := options.Update().SetUpsert(true)
+
+	_, err := col.UpdateOne(ctx, filter, update, opts)
+	if err != nil {
+		r.log.Error(ctx, "update one failed", "error", err)
+		return nil, err
+	}
+
+	return &entities.Checkpoint{
+		PageSize:  checkpoint.PriceCheckPoint.PageSize,
+		PageIndex: checkpoint.PriceCheckPoint.PrevIndex,
+	}, nil
+}
