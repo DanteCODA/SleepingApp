@@ -103,3 +103,47 @@ func (r *CheckpointMongo) UpdateCheckpoint(ctx context.Context, pageSize int64, 
 	if !ok {
 		r.log.Error(ctx, "cannot find collection name")
 		return nil, fmt.Errorf("cannot find collection name")
+	}
+	col := r.db.Collection(colname)
+
+	// filter
+	filter := bson.D{}
+
+	// find options
+	findOptions := options.FindOne()
+
+	cur := col.FindOne(ctx, filter, findOptions)
+
+	// only run defer function when find success
+	err := cur.Err()
+
+	if err == mongo.ErrNoDocuments {
+		// decode cursor to activity model
+		cp, err := models.NewCheckPointModel(ctx, r.log, pageSize, r.conf.SchemaVersion)
+		if err != nil {
+			r.log.Error(ctx, "create model failed", "error", err)
+			return nil, err
+		}
+
+		return r.updateCheckPoint(ctx, col, cp)
+	}
+
+	// find was not succeed
+	if err != nil {
+		r.log.Error(ctx, "find query failed", "error", err)
+		return nil, err
+	}
+
+	var checkpoint models.CheckPointModel
+	if err = cur.Decode(&checkpoint); err != nil {
+		r.log.Error(ctx, "decode failed", "error", err)
+		return nil, err
+	}
+
+	if checkpoint.PriceCheckPoint == nil {
+		checkpoint.PriceCheckPoint = &models.PriceCheckPointModel{
+			PageSize:  pageSize,
+			PrevIndex: 0,
+		}
+		return r.updateCheckPoint(ctx, col, &checkpoint)
+	}
