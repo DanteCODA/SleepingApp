@@ -5,3 +5,5 @@ import (
 	"strings"
 	"time"
 )
+
+// createContext create a new context with ti
