@@ -12,4 +12,5 @@ func createContext(ctx context.Context, t uint64) (context.Context, context.Canc
 	return context.WithTimeout(ctx, timeout*time.Millisecond)
 }
 
-// stringsToUpperCase converts slide of string to slides of lower case s
+// stringsToUpperCase converts slide of string to slides of lower case string
+func stringsToUpperCase(strs []str
