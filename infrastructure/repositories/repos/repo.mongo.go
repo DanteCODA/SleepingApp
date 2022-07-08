@@ -13,4 +13,5 @@ func createContext(ctx context.Context, t uint64) (context.Context, context.Canc
 }
 
 // stringsToUpperCase converts slide of string to slides of lower case string
-func stringsToUpperCase(strs []str
+func stringsToUpperCase(strs []string) (upperStrings []string, err error) {
+	for _, st
