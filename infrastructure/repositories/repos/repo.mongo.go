@@ -18,3 +18,6 @@ func stringsToUpperCase(strs []string) (upperStrings []string, err error) {
 		upperString := strings.ToUpper(str)
 		upperStrings = append(upperStrings, upperString)
 	}
+
+	return upperStrings, nil
+}
