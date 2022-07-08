@@ -183,3 +183,9 @@ func (s *PriceScraper) processPriceResponse(e *colly.HTMLElement) {
 			s.log.Error(ctx, "add price failed", "error", err, "ticker", ticker)
 		}
 	}
+}
+
+// Close scraper
+func (s *PriceScraper) Close() {
+	s.log.Info(context.Background(), "DONE - SCRAPING STOCKS PRICE", "errorTickers", s.errorTickers)
+}
