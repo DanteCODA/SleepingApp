@@ -136,3 +136,50 @@ func (s *PriceScraper) errorHandler(r *colly.Response, err error) {
 }
 
 func (s *PriceScraper) scrapedHandler(r *colly.Response) {
+	ctx := context.Background()
+	foundPrice := r.Ctx.Get("foundPrice")
+	if foundPrice == "" {
+		s.log.Error(ctx, "price not found", "ticker", r.Request.Ctx.Get("ticker"))
+		s.errorTickers = append(s.errorTickers, r.Request.Ctx.Get("ticker"))
+	}
+}
+
+func (s *PriceScraper) processPriceResponse(e *colly.HTMLElement) {
+	// create correlation if for processing fund list
+	id, _ := uuid.NewRandom()
+	ctx := corid.NewContext(context.Background(), id)
+
+	ticker := e.Request.Ctx.Get("ticker")
+	currency := e.Request.Ctx.Get("currency")
+	s.log.Info(ctx, "processPriceResponse", "ticker", ticker)
+
+	foundPrice := false
+
+	assetPrice := entities.AssetPrice{
+		Ticker:   ticker,
+		Currency: currency,
+	}
+
+	e.ForEach("span", func(_ int, span *colly.HTMLElement) {
+		txt := span.Attr("data-reactid")
+		if strings.EqualFold(txt, "31") {
+			p := strings.Replace(span.DOM.Text(), ",", "", -1)
+
+			val, err := strconv.ParseFloat(p, 64)
+			if err != nil {
+				s.log.Error(ctx, "parse price failed", "error", err, "ticker", ticker, "raw-value", txt)
+				return
+			}
+
+			assetPrice.Price = val
+			foundPrice = true
+		}
+	})
+
+	if foundPrice {
+		e.Response.Ctx.Put("foundPrice", "true")
+
+		if err := s.priceService.AddAssetPrice(ctx, &assetPrice); err != nil {
+			s.log.Error(ctx, "add price failed", "error", err, "ticker", ticker)
+		}
+	}
