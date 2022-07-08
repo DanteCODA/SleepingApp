@@ -95,3 +95,44 @@ func (s *PriceScraper) ScrapeAllAssetPrices() {
 	}
 
 	s.ScrapePriceJob.Wait()
+}
+
+// ScrapeAssetPricesFromCheckpoint scrape all assets price from checkpoint
+func (s *PriceScraper) ScrapeAssetPricesFromCheckpoint(pageSize int64) {
+	ctx := context.Background()
+
+	s.configJobs()
+
+	assets, err := s.assetService.GetAssetsFromCheckpoint(ctx, pageSize)
+	if err != nil {
+		s.log.Error(ctx, "get assets list failed", "error", err)
+	}
+
+	for _, asset := range assets {
+		reqContext := colly.NewContext()
+		reqContext.Put("ticker", asset.Ticker)
+		reqContext.Put("currency", asset.Currency)
+
+		url := config.GetPriceByTickerURL(asset.Ticker)
+
+		s.log.Info(ctx, "scraping asset price", "ticker", asset.Ticker)
+		if err := s.ScrapePriceJob.Request("GET", url, nil, reqContext, nil); err != nil {
+			s.log.Error(ctx, "scraping asset price failed", "error", err, "ticker", asset.Ticker)
+		}
+	}
+
+	s.ScrapePriceJob.Wait()
+}
+
+///////////////////////////////////////////////////////////
+// Scraper Handler
+///////////////////////////////////////////////////////////
+
+// errorHandler generic error handler for all scaper jobs
+func (s *PriceScraper) errorHandler(r *colly.Response, err error) {
+	ctx := context.Background()
+	s.log.Error(ctx, "failed to request url", "url", r.Request.URL, "error", err)
+	s.errorTickers = append(s.errorTickers, r.Request.Ctx.Get("ticker"))
+}
+
+func (s *PriceScraper) scrapedHandler(r *colly.Response) {
