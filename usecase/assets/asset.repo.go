@@ -10,4 +10,6 @@ import (
 // Asset Repository Interface
 ///////////////////////////////////////////////////////////
 
-// Reader 
+// Reader interface
+type Reader interface {
+	CountAssets(ctx c
