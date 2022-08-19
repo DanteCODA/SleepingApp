@@ -13,4 +13,5 @@ import (
 // Reader interface
 type Reader interface {
 	CountAssets(ctx context.Context) (int64, error)
-	FindAllAssets(ct
+	FindAllAssets(ctx context.Context) ([]*entities.Asset, error)
+	FindA
