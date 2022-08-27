@@ -14,4 +14,4 @@ import (
 type Reader interface {
 	CountAssets(ctx context.Context) (int64, error)
 	FindAllAssets(ctx context.Context) ([]*entities.Asset, error)
-	FindAssetsFromCheckpoint(ctx context.Context, checkpo
+	FindAssetsFromCheckpoint(ctx context.Context, checkpoint *entities.Checkpoint) ([]*entities.Asset, 
