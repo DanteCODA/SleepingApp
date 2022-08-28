@@ -18,4 +18,8 @@ type Reader interface {
 }
 
 // Writer interface
-type Writer interface 
+type Writer interface {
+}
+
+// Repo interface
+type Repo inter
