@@ -22,4 +22,7 @@ type Writer interface {
 }
 
 // Repo interface
-type Repo inter
+type Repo interface {
+	Reader
+	Writer
+}
