@@ -5,4 +5,8 @@ import (
 
 	logger "github.com/lenoobz/aws-lambda-logger"
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/entities"
-	"github.com/lenoobz/aws-yahoo-asset-price-scrape
+	"github.com/lenoobz/aws-yahoo-asset-price-scraper/usecase/checkpoint"
+)
+
+// Service sector
+type
