@@ -9,4 +9,6 @@ import (
 )
 
 // Service sector
-type
+type Service struct {
+	assetRepo         Repo
+	checkpointSer
