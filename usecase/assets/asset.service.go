@@ -12,4 +12,7 @@ import (
 type Service struct {
 	assetRepo         Repo
 	checkpointService checkpoint.Service
-	log              
+	log               logger.ContextLog
+}
+
+// NewService create ne
