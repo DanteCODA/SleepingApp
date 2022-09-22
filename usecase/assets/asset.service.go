@@ -11,4 +11,5 @@ import (
 // Service sector
 type Service struct {
 	assetRepo         Repo
-	checkpointSer
+	checkpointService checkpoint.Service
+	log              
