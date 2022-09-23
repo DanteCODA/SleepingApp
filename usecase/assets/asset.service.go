@@ -15,4 +15,5 @@ type Service struct {
 	log               logger.ContextLog
 }
 
-// NewService create ne
+// NewService create new service
+func NewService(assetRepo Repo, checkpointSer
