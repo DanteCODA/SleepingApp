@@ -16,4 +16,4 @@ type Service struct {
 }
 
 // NewService create new service
-func NewService(assetRepo Repo, checkpointSer
+func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger.Contex
