@@ -25,4 +25,4 @@ func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger
 }
 
 // GetAllAssets gets all assets
-func (s *Service) GetAllAss
+func (s *Service) GetAllAssets(ctx context.Context) ([]*entities.Asset, er
