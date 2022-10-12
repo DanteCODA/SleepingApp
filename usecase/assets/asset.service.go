@@ -19,4 +19,9 @@ type Service struct {
 func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger.ContextLog) *Service {
 	return &Service{
 		assetRepo:         assetRepo,
-		checkpointService: checkpointSe
+		checkpointService: checkpointService,
+		log:               log,
+	}
+}
+
+// GetAllAssets 
