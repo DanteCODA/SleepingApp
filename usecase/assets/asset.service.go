@@ -18,4 +18,5 @@ type Service struct {
 // NewService create new service
 func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger.ContextLog) *Service {
 	return &Service{
-		assetRepo:    
+		assetRepo:         assetRepo,
+		checkpointService: checkpointSe
