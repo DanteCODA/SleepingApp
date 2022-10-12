@@ -24,4 +24,5 @@ func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger
 	}
 }
 
-// GetAllAssets 
+// GetAllAssets gets all assets
+func (s *Service) GetAllAss
