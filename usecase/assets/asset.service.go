@@ -30,4 +30,5 @@ func (s *Service) GetAllAssets(ctx context.Context) ([]*entities.Asset, error) {
 	return s.assetRepo.FindAllAssets(ctx)
 }
 
-// GetAssetsFromCheckpoint gets all assets from che
+// GetAssetsFromCheckpoint gets all assets from checkpoint
+func (s *Service) GetAssetsFromCheckpo
