@@ -26,4 +26,8 @@ func NewService(assetRepo Repo, checkpointService checkpoint.Service, log logger
 
 // GetAllAssets gets all assets
 func (s *Service) GetAllAssets(ctx context.Context) ([]*entities.Asset, error) {
-	s.log.Info(ctx, "getting all asset
+	s.log.Info(ctx, "getting all assets")
+	return s.assetRepo.FindAllAssets(ctx)
+}
+
+// Get
