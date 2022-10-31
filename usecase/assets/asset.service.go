@@ -32,4 +32,5 @@ func (s *Service) GetAllAssets(ctx context.Context) ([]*entities.Asset, error) {
 
 // GetAssetsFromCheckpoint gets all assets from checkpoint
 func (s *Service) GetAssetsFromCheckpoint(ctx context.Context, pageSize int64) ([]*entities.Asset, error) {
-	s.log.Info(ctx, "get
+	s.log.Info(ctx, "getting assets from checkpoint")
+	numAssets, err :=
