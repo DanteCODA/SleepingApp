@@ -31,4 +31,4 @@ func (s *Service) GetAllAssets(ctx context.Context) ([]*entities.Asset, error) {
 }
 
 // GetAssetsFromCheckpoint gets all assets from checkpoint
-func (s *Service) GetAssetsFromCheckpo
+func (s *Service) GetAssetsFromCheckpoint(ctx context.Context, pageSize int
