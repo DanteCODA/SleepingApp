@@ -40,4 +40,8 @@ func (s *Service) GetAssetsFromCheckpoint(ctx context.Context, pageSize int64) (
 
 	checkpoint, err := s.checkpointService.UpdateCheckpoint(ctx, pageSize, numAssets)
 	if err != nil {
-		s.log.Error(ctx, "find and update checkpoint failed", "err
+		s.log.Error(ctx, "find and update checkpoint failed", "error", err)
+	}
+
+	if checkpoint == nil {
+		s.log.
