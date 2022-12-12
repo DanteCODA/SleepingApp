@@ -44,4 +44,4 @@ func (s *Service) GetAssetsFromCheckpoint(ctx context.Context, pageSize int64) (
 	}
 
 	if checkpoint == nil {
-		s.log.
+		s.log.Error(ctx, "checkpoint is nil", "checkpoint", c
