@@ -48,3 +48,4 @@ func (s *Service) GetAssetsFromCheckpoint(ctx context.Context, pageSize int64) (
 		return nil, nil
 	}
 
+	return s.assetRepo.FindAssetsFromCheckpoin
