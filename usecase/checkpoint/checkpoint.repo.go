@@ -16,4 +16,5 @@ type Reader interface {
 
 // Writer interface
 type Writer interface {
-	UpdateCheckpoint(ctx context.Context, pageSiz
+	UpdateCheckpoint(ctx context.Context, pageSize int64, numAssets int64) (*entities.Checkpoint, error)
+}
