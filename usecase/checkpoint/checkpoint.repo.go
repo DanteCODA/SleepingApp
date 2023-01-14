@@ -16,4 +16,4 @@ type Reader interface {
 
 // Writer interface
 type Writer interface {
-	Updat
+	UpdateCheckpoint(ctx context.Context, pageSiz
