@@ -21,4 +21,6 @@ type Writer interface {
 
 // Repo interface
 type Repo interface {
-	R
+	Reader
+	Writer
+}
