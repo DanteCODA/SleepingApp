@@ -3,4 +3,7 @@ package price
 import (
 	"context"
 
-	"github.com/l
+	"github.com/lenoobz/aws-yahoo-asset-price-scraper/entities"
+)
+
+//////////
