@@ -11,4 +11,8 @@ import (
 ///////////////////////////////////////////////////////////
 
 // Reader interface
-type Reader
+type Reader interface {
+}
+
+// Writer interface
+type Writer interface
