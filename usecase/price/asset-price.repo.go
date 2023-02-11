@@ -16,4 +16,8 @@ type Reader interface {
 
 // Writer interface
 type Writer interface {
-	InsertAssetPrice(ctx context.Context, asset
+	InsertAssetPrice(ctx context.Context, assetPrice *entities.AssetPrice) error
+}
+
+// Repo interface
+type Rep
