@@ -15,4 +15,5 @@ type Reader interface {
 }
 
 // Writer interface
-type Writer interface
+type Writer interface {
+	InsertAssetPrice(ctx context.Context, asset
