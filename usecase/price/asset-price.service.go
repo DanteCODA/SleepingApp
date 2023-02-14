@@ -7,3 +7,5 @@ import (
 	"github.com/lenoobz/aws-yahoo-asset-price-scraper/entities"
 )
 
+// Service sector
+type Service struct
