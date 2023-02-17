@@ -8,4 +8,6 @@ import (
 )
 
 // Service sector
-type Service struct
+type Service struct {
+	assetPriceRepo Repo
+	log            logger.Conte
