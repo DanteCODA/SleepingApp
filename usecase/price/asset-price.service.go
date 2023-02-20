@@ -10,4 +10,8 @@ import (
 // Service sector
 type Service struct {
 	assetPriceRepo Repo
-	log            logger.Conte
+	log            logger.ContextLog
+}
+
+// NewService create new service
+func
