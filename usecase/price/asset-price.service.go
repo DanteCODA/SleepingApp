@@ -14,4 +14,4 @@ type Service struct {
 }
 
 // NewService create new service
-func
+func NewService(assetPriceRepo Repo, log logger.Conte
