@@ -14,4 +14,6 @@ type Service struct {
 }
 
 // NewService create new service
-func NewService(assetPriceRepo Repo, log logger.Conte
+func NewService(assetPriceRepo Repo, log logger.ContextLog) *Service {
+	return &Service{
+		assetPriceR
