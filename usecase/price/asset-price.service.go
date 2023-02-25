@@ -18,3 +18,7 @@ func NewService(assetPriceRepo Repo, log logger.ContextLog) *Service {
 	return &Service{
 		assetPriceRepo: assetPriceRepo,
 		log:            log,
+	}
+}
+
+// AddAssetPrice creates new asset p
