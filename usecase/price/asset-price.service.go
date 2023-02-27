@@ -23,4 +23,4 @@ func NewService(assetPriceRepo Repo, log logger.ContextLog) *Service {
 
 // AddAssetPrice creates new asset price
 func (s *Service) AddAssetPrice(ctx context.Context, assetPrice *entities.AssetPrice) error {
-	s.log
+	s.log.Info(ctx, "adding asset price", "ticke
