@@ -24,4 +24,5 @@ func NewService(assetPriceRepo Repo, log logger.ContextLog) *Service {
 // AddAssetPrice creates new asset price
 func (s *Service) AddAssetPrice(ctx context.Context, assetPrice *entities.AssetPrice) error {
 	s.log.Info(ctx, "adding asset price", "ticker", assetPrice.Ticker)
-	return s.as
+	return s.assetPriceRepo.InsertAssetPrice(ctx, assetPrice)
+}
